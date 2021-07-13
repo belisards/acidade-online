@@ -27,6 +27,6 @@ for item in doc.find_all(class_='widget__data'):
 
 df = pd.DataFrame(rows)
 
-# df['text'] = df.link.apply(scrape_news)
+df['text'] = df.link.apply(scrape_news)
 
 pd.read_csv('jornaldacidade.csv').append(df).drop_duplicates().to_csv('jornaldacidade.csv')
